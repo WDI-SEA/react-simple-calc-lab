@@ -2,9 +2,9 @@ import React, { Component } from 'react';
 
 class Calculator extends Component {
     state = { 
-       num1: 0,
-       num2: 0,
-       sum: 0
+       num1: '',
+       num2: '',
+       result: ''
      } 
 
      setNum = (e, num) => {
@@ -17,8 +17,28 @@ class Calculator extends Component {
          let num2 = this.state.num2
          let numSum  = parseInt(num1) + parseInt(num2)
          this.setState({
-             sum: numSum
+             result: numSum
          })
+     }
+
+     subtract = () => {
+        let result = parseInt(this.state.num1) - parseInt(this.state.num2)
+        this.setState({
+            result: result
+        })
+     }
+
+     multiply = () => {
+         let result = parseInt(this.state.num1) * parseInt(this.state.num2)
+         this.setState({
+            result: result
+        })
+     }
+     divide = () => {
+         let result = parseInt(this.state.num1) / parseInt(this.state.num2)
+         this.setState({
+            result: result
+        })
      }
 
     render() { 
@@ -35,7 +55,7 @@ class Calculator extends Component {
                 onChange = {(e)=>this.setNum(e, 'num1')}
                 />
 
-                <span>+</span>
+                <span></span>
 
                 <input type="number"
                 name='num2'
@@ -44,12 +64,27 @@ class Calculator extends Component {
                 onChange = {(e)=>this.setNum(e, 'num2')} />
 
                 <button
-                name='sum'
+                // name='sum'
                 // value={this.state.sum}
                 onClick = {this.getSum}
-                >=</button>
+                >+</button>
+                <button
+                // name='subtract'
+                // value={this.state.sum}
+                onClick = {this.subtract}
+                >-</button>
+                <button
+                // name='multiply'
+                // value={this.state.sum}
+                onClick = {this.multiply}
+                >x</button>
+                <button
+                // name='divide'
+                // value={this.state.sum}
+                onClick = {this.divide}
+                >/</button>
 
-                <h3>{this.state.sum}</h3>
+                <h3>{this.state.result}</h3>
             </div>
         </div>
         )
