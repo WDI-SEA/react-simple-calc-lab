@@ -44,7 +44,8 @@ class Calculator extends Component {
     render() { 
         return (
         <div className="container">
-         <h1>Add with React!</h1>
+         <h1>React Calculator</h1>
+         <p>Enter two numbers, then choose an operator to see the result</p>
 
             <div className="add">
 
@@ -54,14 +55,7 @@ class Calculator extends Component {
                 value={this.state.num1}
                 onChange = {(e)=>this.setNum(e, 'num1')}
                 />
-
-                <span></span>
-
-                <input type="number"
-                name='num2'
-                placeholder='enter second number'
-                value={this.state.num2}
-                onChange = {(e)=>this.setNum(e, 'num2')} />
+                 
 
                 <button
                 // name='sum'
@@ -83,6 +77,13 @@ class Calculator extends Component {
                 // value={this.state.sum}
                 onClick = {this.divide}
                 >/</button>
+       
+
+                <input type="number"
+                name='num2'
+                placeholder='enter second number'
+                value={this.state.num2}
+                onChange = {(e)=>this.setNum(e, 'num2')} />
 
                 <h3>{this.state.result}</h3>
             </div>
