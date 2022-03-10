@@ -22,7 +22,7 @@ class Calculator extends Component {
       this.setState({
         ...updatedInput, 
         error: "",
-        result: ""
+        sum: ""
       }, ()=> console.log(this.state))
   }
 
