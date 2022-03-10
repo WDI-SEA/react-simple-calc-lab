@@ -9,13 +9,13 @@ class Calculator extends Component {
     error: ""
   }
 
-// calculate = (e) => {
-//   e.preventDefault()
-//   this.setState({
-//     num1: "",
-//     num2: "",
-//   })
-// }
+submitFields = (e) => {
+  e.preventDefault()
+  this.setState({
+    num1: "",
+    num2: "",
+  })
+}
 
 textChangeHandler = (e) => {
   const updatedInput = {
@@ -39,27 +39,27 @@ calculate = (e) => {
     if( e.target.name === "+"){
       this.setState({
         result: this.state.num1 + this.state.num2,
-        num1: "",
-        num2: "",
+        // num1: "",
+        // num2: "",
         
       })
     } else if (e.target.name === "-"){
       this.setState({
         result: this.state.num1 - this.state.num2,
-        num1: "",
-        num2: "",
+        // num1: "",
+        // num2: "",
       })
     } else if (e.target.name === "*") {
       this.setState({
         result: this.state.num1 * this.state.num2,
-        num1: "",
-        num2: "",
+        // num1: "",
+        // num2: "",
       })
     } else {
       this.setState({
         result: this.state.num1 / this.state.num2,
-        num1: "",
-        num2: "",
+        // num1: "",
+        // num2: "",
       })
     }
   }
@@ -113,7 +113,7 @@ calculate = (e) => {
   render(){
     return (
       <div className="App App-header">
-        <form onSubmit={this.calculate}>
+        <form onSubmit={this.submitFields}>
           <label htmlFor="num1"> Num1: </label>
           <input 
             type="number"
