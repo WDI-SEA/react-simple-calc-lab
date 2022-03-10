@@ -31,7 +31,7 @@ textChangeHandler = (e) => {
 
 calculate = (e) => {
   e.preventDefault()
-  if(!this.state.num1 || !this.state.num2){
+  if(this.state.num1 === "" || this.state.num2 === ""){
     this.setState({
       error: "Please fill in both number fields"
     })
