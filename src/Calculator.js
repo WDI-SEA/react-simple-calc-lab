@@ -2,50 +2,68 @@ import React, { Component } from "react";
 
 class Calculator extends Component {
   state = {
-    num1: '',
-    num2: '',
-    result: ''
+    num1: "",
+    num2: "",
+    result: "",
   };
 
   setNum = (e) => {
-    this.setState({ [e.target.name]: e.target.value});
-  }
+    this.setState({ [e.target.name]: e.target.value });
+  };
 
-  handleCalculate = (e) => {
-    e.preventDefault()
-    let num1 = Number(this.state.num1)
-    let num2 = Number(this.state.num2)
-    this.setState({result: num1 + num2})
-  }
+  add = () => {
+    let num1 = Number(this.state.num1);
+    let num2 = Number(this.state.num2);
+    this.setState({ result: num1 + num2 });
+  };
+
+  subtract = () => {
+    let num1 = Number(this.state.num1);
+    let num2 = Number(this.state.num2);
+    this.setState({ result: num1 - num2 });
+  };
+
+  divide = () => {
+    let num1 = Number(this.state.num1);
+    let num2 = Number(this.state.num2);
+    this.setState({ result: num1 / num2 });
+  };
+
+  multiply = () => {
+    let num1 = Number(this.state.num1);
+    let num2 = Number(this.state.num2);
+    this.setState({ result: num1 * num2 });
+  };
 
   render() {
     return (
       <div className="caclulator">
-        <h1>Adding is fun</h1>
+        <h1>Calculations</h1>
+        <h3>Input two numbers and then select an operator</h3>
 
-        <form onSubmit={this.handleCalculate}>
-          <input
+        <input
           type="number"
           name="num1"
           value={this.state.num1}
           onChange={this.setNum}
-          placeholder='input a number'
-          />
-          
-          <span>+</span>
+          placeholder="Input a number"
+        />
 
-          <input
+        <input
           type="number"
           name="num2"
           value={this.state.num2}
           onChange={this.setNum}
-          placeholder = 'input another number'
-          />
-          
-          <button>=</button>
+          placeholder="Input another number"
+        />
 
-          <h3>Result:{this.state.result}</h3>
-        </form>
+        <br></br>
+        <button onClick={this.add}>+</button>
+        <button onClick={this.subtract}>-</button>
+        <button onClick={this.multiply}>*</button>
+        <button onClick={this.divide}>/</button>
+
+        <h2>= {this.state.result}</h2>
       </div>
     );
   }
