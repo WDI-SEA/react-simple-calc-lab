@@ -65,7 +65,7 @@ class Calculator extends Component {
 
                 
                 <br/>
-                {/* <form onSubmit={this.doMath}>
+                <form onSubmit={this.doMath}>
                     <input type = "number"
                         name = "num3"
                         value = {this.state.num3}
@@ -118,7 +118,7 @@ class Calculator extends Component {
                     <button> = </button>
                     <h3> {this.state.div}</h3>
                 </form>
-                 */}
+                
             </div>
 
 
