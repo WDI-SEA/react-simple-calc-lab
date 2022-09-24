@@ -11,12 +11,19 @@ class App extends Component {
   // change handler event
   onChange = (e) => {
     console.log('input was changed')
+    this.setState({
+      newItem: e.target.value
+    })
   }
 
   //capture values on onChange property
   addValue = (e) => {
     e.preventDefault()
       console.log('numbers inputed')
+    this.setState(prevState => {
+      
+    })
+
   }
 
   render() {
