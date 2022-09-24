@@ -3,11 +3,8 @@ import React, { Component } from 'react'
 
 export default class Calculator extends Component {
 
-    state = {
-        numOne: '',
-        numTwo: '',
-        sum: ''
-    }
+
+
 
     render() {
 
@@ -21,16 +18,18 @@ export default class Calculator extends Component {
                     <form onSubmit={this.getSum}>
                         <input
                             type="number"
-                            onChange={this.handleChange}
-                            value={this.state.numOne}
+                            name='numOne'
+                            onChange={ (e) => this.props.setNum(e, 'num1') }
+                            value={this.props.numOne}
                         />
 
                         <span>+</span>
 
                         <input
                             type="number"
-                            onChange={this.handleChange}
-                            value={this.state.numTwo}
+                            name='numTwo'
+                            onChange={ (e) => this.props.setNum(e, 'num2') }
+                            value={this.props.numTwo}
                         />
 
                         <button>=</button>
