@@ -3,6 +3,9 @@ import React, { Component } from "react"
 class Calculator extends Component {
     state= {
         total: 0,
+        num1: "",
+        num2: "",
+        operator: ""
         
     }
 
@@ -12,9 +15,19 @@ class Calculator extends Component {
 
     totalNum = (e, num) => {
         e.preventDefault()
+        let total
+        if (this.state.operator === "+") {
+            total = parseInt(this.state.num1) + parseInt(this.state.num2)
+        } else if (this.state.operator === "-") {
+            total= parseInt(this.state.num1) - parseInt(this.state.num2)
+        } else if (this.state.operator === "*") {
+            total = parseInt(this.state.num1) * parseInt(this.state.num2)
+        } else if (this.state.operator === "/") {
+            total = parseInt(this.state.num1) / parseInt(this.state.num2)
+        }
         this.setState((prevState => {
             return {
-                total: parseInt(this.state.num1) + parseInt(this.state.num2)
+                total
             }
         }))
     }
@@ -22,23 +35,32 @@ class Calculator extends Component {
 
     render() {
         return(
-            <div>
+            <div className="App">
+                <h1>Simple Calculator</h1>
                 <form onSubmit={this.totalNum}>
                     <input type="number"
                             name="num1"
-                            placeholder="Enter your first number"
+                            placeholder="Enter your 1st number"
                             value={this.state.num1}
                             onChange={ (e) => this.setNum(e, 'num1') }
                         
                     />
                     <input type="number"
                             name="num2"
-                            placeholder="Enter your second number"
+                            placeholder="Enter your 2nd number"
                             value={this.state.num2}
                             onChange={ (e) => this.setNum(e, 'num2') }
                         
                     />
-                    <button type="submit">Add it!</button>
+                     <input type="text"
+                            name="operator"
+                            size="30"
+                            placeholder="Enter your operation(+, -, *, /)"
+                            value={this.state.operator}
+                            onChange={ (e) => this.setNum(e, 'operator') }
+                        
+                    />
+                    <button type="submit">Perform Maths!</button>
                 </form>
                 <h1>Total:{this.state.total}</h1>
             </div>
