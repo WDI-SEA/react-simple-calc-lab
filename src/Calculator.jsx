@@ -6,29 +6,29 @@ class Calculator extends Component {
     state = {
         numInp1: '',
         numImp2: '',
-        operand: '',
+        operator: '',
         result: '',
     }
 
 
     setOp = op => {
         this.setState({
-            operand: op
+            operator: op
         })
     }
 
     calculate = () => {
         let num1 = this.state.numInp1
         let num2 = this.state.numInp2
-        let operand = this.state.operand
+        let operator = this.state.operator
         let result = ''
-        if(operand === '+') {
+        if(operator === '+') {
             result = Number(num1) + Number(num2)
-        } else if (operand === '-') {
+        } else if (operator === '-') {
             result = num1 - num2
-        } else if (operand === '*') {
+        } else if (operator === '*') {
             result = num1 * num2
-        } else if (operand === '/') {
+        } else if (operator === '/') {
             result = num1 / num2
         }
 
@@ -53,7 +53,7 @@ class Calculator extends Component {
                     value={this.state.numInp1}
                     onChange={ (e) => this.setNum(e, 'numInp1')}
                     />
-                    <span>{this.state.operand}</span>
+                    <span>{this.state.operator}</span>
                     <input type="number" 
                      name='numInp2'
                      placeholder='Second Number'
