@@ -15,7 +15,7 @@ export default class Calculator extends Component {
 
                 <div className="add">
 
-                    <form onSubmit={this.getSum}>
+                    <form onSubmit={ (e) => this.props.getSum(e)}>
                         <input
                             type="number"
                             name='numOne'
@@ -32,10 +32,11 @@ export default class Calculator extends Component {
                             value={this.props.numTwo}
                         />
 
-                        <button>=</button>
+                        <button type='submit'>=</button>
                     </form>
 
                     <h3>Addition results go here!</h3>
+                    <p>Sum: {this.props.sum}</p>
             </div>
         </div>
         )

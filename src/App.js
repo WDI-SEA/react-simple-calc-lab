@@ -12,8 +12,26 @@ export default class App extends Component {
 }
 
 setNum = (e, num) => {
-  console.log(e.target.value)
-  this.setState({ [num]: e.target.value });
+  console.log(e.target)
+  this.setState({ [e.target.name]: e.target.value });
+
+  console.log(this.state.numOne)
+}
+
+addition = (numOne, numTwo) => {
+  return numOne + numTwo
+}
+
+getSum = e => {
+  e.preventDefault()
+  console.log(this.state.numOne, this.state.numTwo)
+
+  this.setState({
+...this.state, 
+sum: this.addition(parseInt(this.state.numOne), parseInt(this.state.numTwo))
+  }
+  )
+  console.log(this.state)
 }
 
   render() {
@@ -23,6 +41,8 @@ setNum = (e, num) => {
         numOne={this.state.numOne}
         numTwo={this.state.numTwo}
         setNum={this.setNum}
+        getSum={this.getSum}
+        sum={this.state.sum}
         />
       </div>
     )
