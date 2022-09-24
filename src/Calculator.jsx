@@ -14,22 +14,29 @@ export default class Calculator extends Component {
 
         return (
             <div className="container">
-            <h1>Add with React!</h1>
+                <h1>Add with React!</h1>
 
-            <div className="add">
-                <input
-                    type="text"
-                />
+                <div className="add">
 
-                <span>+</span>
+                    <form onSubmit={this.getSum}>
+                        <input
+                            type="number"
+                            onChange={this.handleChange}
+                            value={this.state.numOne}
+                        />
 
-                <input
-                    type="text"
-                />
+                        <span>+</span>
 
-                <button>=</button>
+                        <input
+                            type="number"
+                            onChange={this.handleChange}
+                            value={this.state.numTwo}
+                        />
 
-                <h3>Addition results go here!</h3>
+                        <button>=</button>
+                    </form>
+
+                    <h3>Addition results go here!</h3>
             </div>
         </div>
         )
