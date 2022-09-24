@@ -10,7 +10,10 @@ export default class Calculator extends Component {
     }
 
     render() {
-        <div className="container">
+
+
+        return (
+            <div className="container">
             <h1>Add with React!</h1>
 
             <div className="add">
@@ -29,11 +32,6 @@ export default class Calculator extends Component {
                 <h3>Addition results go here!</h3>
             </div>
         </div>
-
-        return (
-            <div>
-
-            </div>
         )
     }
 }
