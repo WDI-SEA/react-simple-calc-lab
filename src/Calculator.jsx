@@ -35,19 +35,19 @@ class Calculator extends Component {
 
     render() {
         return(
-            <div className="App">
+            <div className="App-header">
                 <h1>Simple Calculator</h1>
                 <form onSubmit={this.totalNum}>
                     <input type="number"
                             name="num1"
-                            placeholder="Enter your 1st number"
+                            placeholder="Enter number"
                             value={this.state.num1}
                             onChange={ (e) => this.setNum(e, 'num1') }
                         
                     />
                     <input type="number"
                             name="num2"
-                            placeholder="Enter your 2nd number"
+                            placeholder="Enter number"
                             value={this.state.num2}
                             onChange={ (e) => this.setNum(e, 'num2') }
                         
