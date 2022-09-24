@@ -59,25 +59,30 @@ class Calculator extends Component {
     }
     render() {
         return (
-            <div className="container">
-                <h1>Do maths with React!</h1>
+            <div>
+                <h1 className="text-center text-4xl font-bold">Do maths with React!</h1>
                 <div>
                     <form onSubmit={this.performOperation}>
-                        <input type="number" name="num1" placeholder="Enter your first number" 
-                            value={this.state.num1} 
-                            onChange={this.setValue}
-                        />
-                        <input type="text" name="operator" placeholder="+, -, *, /" 
-                            value={this.state.operator} 
-                            onChange={this.setValue}
-                        />
-                        <input type="number" name="num2" placeholder="Enter your second number" 
-                            value={this.state.num2} 
-                            onChange={this.setValue}
-                        />
-                        <button type="submit">=</button>
+                        <div className="flex flex-col items-center">
+                            <input type="number" name="num1" placeholder="Enter your first number" 
+                                value={this.state.num1} 
+                                onChange={this.setValue}
+                                className="w-64 mt-2 p-3 bg-black border rounded text-center focus:placeholder-black"
+                            />
+                            <input type="text" name="operator" placeholder="+, -, *, /" 
+                                value={this.state.operator} 
+                                onChange={this.setValue}
+                                className="w-24 mt-2 p-3 bg-black border rounded text-center focus:placeholder-black"
+                            />
+                            <input type="number" name="num2" placeholder="Enter your second number" 
+                                value={this.state.num2} 
+                                onChange={this.setValue}
+                                className="w-64 mt-2 p-3 bg-black border rounded text-center focus:placeholder-black"
+                            />
+                            <button type="submit">=</button>
+                        </div>
                     </form>
-                    <h3>{this.state.sum}</h3>
+                    <h1 className="w-fit h-fit mx-auto mt-2 p-3 bg-black border rounded text-center text-4xl">{this.state.sum}</h1>
                 </div>
             </div>
         );
