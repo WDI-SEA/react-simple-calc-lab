@@ -4,7 +4,9 @@ import React, { Component } from 'react'
 export default class Calculator extends Component {
 
     state = {
-
+        numOne: '',
+        numTwo: '',
+        sum: ''
     }
 
     render() {
@@ -23,7 +25,7 @@ export default class Calculator extends Component {
                 />
 
                 <button>=</button>
-                
+
                 <h3>Addition results go here!</h3>
             </div>
         </div>
