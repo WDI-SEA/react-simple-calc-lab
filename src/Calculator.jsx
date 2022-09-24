@@ -37,6 +37,7 @@ export default class Calculator extends Component {
 
                     <h3>Addition results go here!</h3>
                     <p>Sum: {this.props.sum}</p>
+                    
             </div>
         </div>
         )

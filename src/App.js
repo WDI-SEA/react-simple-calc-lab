@@ -27,7 +27,7 @@ getSum = e => {
   console.log(this.state.numOne, this.state.numTwo)
 
   this.setState({
-...this.state, 
+// parseInt to change from string to integer 
 sum: this.addition(parseInt(this.state.numOne), parseInt(this.state.numTwo))
   }
   )
