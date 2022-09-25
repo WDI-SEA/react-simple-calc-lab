@@ -38,9 +38,11 @@ export default class Calculator extends Component {
                     <h3>Addition results go here!</h3>
                     <p>Sum: {this.props.sum}</p>
 
-
-
             </div>
+
+<br></br>
+<br></br>
+<br></br>
 
             <div className='subtract'>
 
@@ -70,7 +72,9 @@ export default class Calculator extends Component {
 
             </div>
 
-
+<br></br>
+<br></br>
+<br></br>
 
             <div className='multiply'>
 
@@ -98,7 +102,9 @@ export default class Calculator extends Component {
                 <p>Multiplication Result: {this.props.multiply}</p>
             </div>
 
-
+<br></br>
+<br></br>
+<br></br>
 
             <div className='divide'>
                 <form onSubmit={ (e) => this.props.getDivide(e)}>
