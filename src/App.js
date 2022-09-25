@@ -9,7 +9,9 @@ export default class App extends Component {
     numOne: '',
     numTwo: '',
     sum: '',
-    subtract: ''
+    subtract: '',
+    multiply: '',
+    divide: ''
 }
 
 setNum = (e, num) => {
@@ -25,6 +27,14 @@ addition = (numOne, numTwo) => {
 
 subtraction = (numOne, numTwo) => {
   return numOne - numTwo
+}
+
+multiplication = (numOne, numTwo) => {
+  return numOne * numTwo
+}
+
+division = (numOne, numTwo) => {
+  return numOne / numTwo
 }
 
 getSum = e => {
@@ -47,6 +57,22 @@ getSubtract = e => {
   })
 }
 
+getMultiply = e => {
+  e.preventDefault()
+
+  this.setState({
+    multiply: this.multiplication(parseInt(this.state.numOne), parseInt(this.state.numTwo))
+  })
+}
+
+getDivide = e => {
+  e.preventDefault()
+
+  this.setState({
+    divide: this.division(parseInt(this.state.numOne), parseInt(this.state.numTwo))
+  })
+}
+
   render() {
     return (
       <div>
@@ -56,8 +82,12 @@ getSubtract = e => {
         setNum={this.setNum}
         getSum={this.getSum}
         getSubtract={this.getSubtract}
+        getMultiply={this.getMultiply}
+        getDivide={this.getDivide}
         sum={this.state.sum}
         subtract={this.state.subtract}
+        multiply={this.state.multiply}
+        divide={this.state.divide}
         />
       </div>
     )
