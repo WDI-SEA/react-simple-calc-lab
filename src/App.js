@@ -8,7 +8,8 @@ export default class App extends Component {
   state = {
     numOne: '',
     numTwo: '',
-    sum: ''
+    sum: '',
+    subtract: ''
 }
 
 setNum = (e, num) => {
@@ -20,6 +21,10 @@ setNum = (e, num) => {
 
 addition = (numOne, numTwo) => {
   return numOne + numTwo
+}
+
+subtraction = (numOne, numTwo) => {
+  return numOne - numTwo
 }
 
 getSum = e => {
@@ -34,6 +39,14 @@ sum: this.addition(parseInt(this.state.numOne), parseInt(this.state.numTwo))
   console.log(this.state)
 }
 
+getSubtract = e => {
+  e.preventDefault()
+  
+  this.setState({
+    subtract: this.subtraction(parseInt(this.state.numOne), parseInt(this.state.numTwo))
+  })
+}
+
   render() {
     return (
       <div>
@@ -42,7 +55,9 @@ sum: this.addition(parseInt(this.state.numOne), parseInt(this.state.numTwo))
         numTwo={this.state.numTwo}
         setNum={this.setNum}
         getSum={this.getSum}
+        getSubtract={this.getSubtract}
         sum={this.state.sum}
+        subtract={this.state.subtract}
         />
       </div>
     )

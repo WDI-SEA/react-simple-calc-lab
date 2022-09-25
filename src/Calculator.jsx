@@ -37,6 +37,31 @@ export default class Calculator extends Component {
 
                     <h3>Addition results go here!</h3>
                     <p>Sum: {this.props.sum}</p>
+
+
+
+                    <form onSubmit={ (e) => this.props.getSubtract(e)}>
+                        <input
+                            type="number"
+                            name='numOne'
+                            onChange={ (e) => this.props.setNum(e, 'num1') }
+                            value={this.props.numOne}
+                        />
+
+                        <span>+</span>
+
+                        <input
+                            type="number"
+                            name='numTwo'
+                            onChange={ (e) => this.props.setNum(e, 'num2') }
+                            value={this.props.numTwo}
+                        />
+
+                        <button type='submit'>=</button>
+                    </form>
+
+                    <h3>Subtraction results go here!</h3>
+                    <p>Subtraction Result: {this.props.subtract}</p>
                     
             </div>
         </div>
