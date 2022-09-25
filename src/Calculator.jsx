@@ -8,11 +8,11 @@ export default class Calculator extends Component {
         operator: "",
         results: ""
     }
-    setNum = (e, num) => {
-        this.setState({ [num]:e.target.value})
+    setVariable = (e, variable) => {
+        this.setState({ [variable]:e.target.value})
         console.log(e)
     }
-    addNum = () => {
+    calcNum = () => {
         this.setState((prevState, props) => {
             // console(prevState.num1)
             if(prevState.operator == "+"){
@@ -26,6 +26,14 @@ export default class Calculator extends Component {
             }
         })
     }
+    clearNum = () => {
+        this.setState({
+            num1: "",
+            num2: "",
+            operator: "",
+            results: ""
+        })
+    }
 
     render() {
         return (
@@ -35,9 +43,9 @@ export default class Calculator extends Component {
                     <input type="number"
                     name="num1"
                     value={this.state.num1}
-                    onChange={ (e)=> this.setNum(e, 'num1')}
+                    onChange={ (e)=> this.setVariable(e, 'num1')}
                     placeholder="Enter your 1st number"/>
-                    <select type="text" name="" value={this.state.operator} onChange={ (e)=> this.setNum(e, 'operator')}>
+                    <select type="text" name="" value={this.state.operator} onChange={ (e)=> this.setVariable(e, 'operator')} required>
                         <option value="+">+</option>
                         <option value="-">-</option>
                         <option value="x">x</option>
@@ -46,10 +54,11 @@ export default class Calculator extends Component {
                     <input type="number"
                     name="num1"
                     value={this.state.num2}
-                    onChange={ (e)=> this.setNum(e, 'num2')}
+                    onChange={ (e)=> this.setVariable(e, 'num2')}
                     placeholder="Enter your 2nd number"/>
-                    <button onClick={this.addNum} type="submit">=</button>
+                    <button onClick={this.calcNum} type="submit">=</button>
                     <h3>Results: {this.state.results}</h3>
+                    <button onClick={this.clearNum} type="submit">CLEAR!</button>
                 </div>
             </div>
         )
