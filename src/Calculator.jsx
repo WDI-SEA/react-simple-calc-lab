@@ -11,7 +11,11 @@ export default class Calculator extends Component {
 
         return (
             <div className="container">
-                <h1>Add with React!</h1>
+                <h1>Math operations with React!</h1>
+
+               
+<br></br>
+<br></br>
 
                 <div className="add">
 
