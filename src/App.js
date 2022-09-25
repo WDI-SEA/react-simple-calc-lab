@@ -9,6 +9,12 @@ export default class App extends Component {
     numOne: '',
     numTwo: '',
     sum: '',
+    numOneSub: '',
+    numTwoSub: '',
+    numOneMul: '',
+    numTwoMul: '',
+    numOneDiv: '',
+    numTwoDiv: '',
     subtract: '',
     multiply: '',
     divide: ''
@@ -25,16 +31,16 @@ addition = (numOne, numTwo) => {
   return numOne + numTwo
 }
 
-subtraction = (numOne, numTwo) => {
-  return numOne - numTwo
+subtraction = (numOneSub, numTwoSub) => {
+  return numOneSub - numTwoSub
 }
 
-multiplication = (numOne, numTwo) => {
-  return numOne * numTwo
+multiplication = (numOneMul, numTwoMul) => {
+  return numOneMul * numTwoMul
 }
 
-division = (numOne, numTwo) => {
-  return numOne / numTwo
+division = (numOneDiv, numTwoDiv) => {
+  return numOneDiv / numTwoDiv
 }
 
 getSum = e => {
@@ -53,7 +59,7 @@ getSubtract = e => {
   e.preventDefault()
   
   this.setState({
-    subtract: this.subtraction(parseInt(this.state.numOne), parseInt(this.state.numTwo))
+    subtract: this.subtraction(parseInt(this.state.numOneSub), parseInt(this.state.numTwoSub))
   })
 }
 
@@ -61,7 +67,7 @@ getMultiply = e => {
   e.preventDefault()
 
   this.setState({
-    multiply: this.multiplication(parseInt(this.state.numOne), parseInt(this.state.numTwo))
+    multiply: this.multiplication(parseInt(this.state.numOneMul), parseInt(this.state.numTwoMul))
   })
 }
 
@@ -69,7 +75,7 @@ getDivide = e => {
   e.preventDefault()
 
   this.setState({
-    divide: this.division(parseInt(this.state.numOne), parseInt(this.state.numTwo))
+    divide: this.division(parseInt(this.state.numOneDiv), parseInt(this.state.numTwoDiv))
   })
 }
 
@@ -79,6 +85,12 @@ getDivide = e => {
         <Calculator 
         numOne={this.state.numOne}
         numTwo={this.state.numTwo}
+        numOneSub={this.state.numOneSub}
+        numTwoSub={this.state.numTwoSub}
+        numOneMul={this.state.numOneMul}
+        numTwoMul={this.state.numTwoMul}
+        numOneDiv={this.state.numOneDiv}
+        numTwoDiv={this.state.numTwoDiv}
         setNum={this.setNum}
         getSum={this.getSum}
         getSubtract={this.getSubtract}

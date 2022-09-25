@@ -53,18 +53,18 @@ export default class Calculator extends Component {
                     <form onSubmit={ (e) => this.props.getSubtract(e)}>
                         <input
                             type="number"
-                            name='numOne'
+                            name='numOneSub'
                             onChange={ (e) => this.props.setNum(e, 'num1') }
-                            value={this.props.numOne}
+                            value={this.props.numOneSub}
                         />
 
                         <span>-</span>
 
                         <input
                             type="number"
-                            name='numTwo'
+                            name='numTwoSub'
                             onChange={ (e) => this.props.setNum(e, 'num2') }
-                            value={this.props.numTwo}
+                            value={this.props.numTwoSub}
                         />
 
                         <button type='submit'>=</button>
@@ -85,18 +85,18 @@ export default class Calculator extends Component {
                 <form onSubmit={ (e) => this.props.getMultiply(e)}>
                     <input
                         type="number"
-                        name='numOne'
+                        name='numOneMul'
                         onChange={ (e) => this.props.setNum(e, 'num1') }
-                        value={this.props.numOne}
+                        value={this.props.numOneMul}
                     />
 
                     <span>*</span>
 
                     <input
                         type="number"
-                        name='numTwo'
+                        name='numTwoMul'
                         onChange={ (e) => this.props.setNum(e, 'num2') }
-                        value={this.props.numTwo}
+                        value={this.props.numTwoMul}
                     />
 
                     <button type='submit'>=</button>
@@ -114,18 +114,18 @@ export default class Calculator extends Component {
                 <form onSubmit={ (e) => this.props.getDivide(e)}>
                     <input
                         type="number"
-                        name='numOne'
+                        name='numOneDiv'
                         onChange={ (e) => this.props.setNum(e, 'num1') }
-                        value={this.props.numOne}
+                        value={this.props.numOneDiv}
                     />
 
                     <span>/</span>
 
                     <input
                         type="number"
-                        name='numTwo'
+                        name='numTwoDiv'
                         onChange={ (e) => this.props.setNum(e, 'num2') }
-                        value={this.props.numTwo}
+                        value={this.props.numTwoDiv}
                     />
 
                     <button type='submit'>=</button>
