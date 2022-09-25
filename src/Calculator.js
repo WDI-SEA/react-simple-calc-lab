@@ -53,11 +53,9 @@ export default class Calculator extends Component{
     }
     
     render(){
-
-        console.log(this.state) 
         return(
             <div className="container">
-                <h1>Add with React!</h1>
+                <h1>Calculator with React!</h1>
 
                 <div className="add">
                     <input type="text" onChange={(e)=>this.setNum(e,'num1')} name="num1" placeholder="Enter value 1 here" value={this.state.num1} />
