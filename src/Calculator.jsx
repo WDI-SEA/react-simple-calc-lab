@@ -3,23 +3,32 @@ import React, { Component } from 'react'
 class Calculator extends Component {
     state = {
         numOne: '',
+        operation: 'add',
         numTwo: '',
-        sum: ''
+        result: ''
     }
 
     handleChange = e => {
         this.setState({
             [e.target.name]: e.target.value
         })
-        console.log(this.state)
     }
 
     doMath = e => {
         e.preventDefault()
         this.setState(prevState => {
-            const sum = Number(prevState.numOne) + Number(prevState.numTwo)
+            let result = ''
+            if (prevState.operation === 'add') {
+                result = Number(prevState.numOne) + Number(prevState.numTwo)
+            } else if (prevState.operation === 'subtract') {
+                result = Number(prevState.numOne) - Number(prevState.numTwo)
+            } else if (prevState.operation === 'multiply') {
+                result = Number(prevState.numOne) * Number(prevState.numTwo)
+            } else if (prevState.operation === 'divide') {
+                result = Number(prevState.numOne) / Number(prevState.numTwo)
+            }
             return {
-                sum
+                result
             }
         })
     }
@@ -35,14 +44,19 @@ class Calculator extends Component {
                         value={this.state.numOne}
                         onChange={this.handleChange}
                     />
-                    <span>+</span>
+                    <select name='operation' value={this.state.operation} onChange={this.handleChange}>
+                        <option value='add'>+</option>
+                        <option value='subtract'>-</option>
+                        <option value='multiply'>*</option>
+                        <option value='divide'>/</option>
+                    </select>
                     <input type='number'
                         name='numTwo'
                         value={this.state.numTwo}
                         onChange={this.handleChange}
                     />
                     <button type='submit' onClick={this.doMath}>=</button>
-                    <h3>{this.state.sum}</h3>
+                    <span><strong>{this.state.result}</strong></span>
                 </form>
             </div>
         )
