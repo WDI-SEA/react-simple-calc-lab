@@ -5,7 +5,8 @@ class Calculator extends Component {
 state= {
     num1: 0,
     num2: 0,
-    sum: 0
+    sum: 0,
+    operation:'+'
 };
 
 
@@ -19,13 +20,26 @@ calculate = () => {
     //take the two values from state
     //add them together
     this.setState(prevState => {
-        const addition = prevState.num1 + prevState.num2
+        let sum = 0
+        if(prevState.operation === '+') {
+            sum = prevState.num1 + prevState.num2
+        } else if (prevState.operation === '-') {
+            sum = prevState.num1 - prevState.num2 
+        } else if (prevState.operation === '/') {
+            sum = prevState.num1 / prevState.num2 
+        } else if (prevState.operation === '*') {
+            sum = prevState.num1 * prevState.num2 
+        } else {
+            console.warn('something has gone wrong with the math')
+        }
         return {
             //set the result in state to be the new value
-            sum: addition
+            sum
         }
     })
 };
+
+setOperation = operation => this.setState({ operation })
 
 
 
@@ -43,6 +57,10 @@ render() {
                     onChange={ e => this.setNum(e, 'num2')} />
                 <button onClick={this.calculate}>=</button>
                 <h3>= {this.state.sum}</h3>
+                <button onClick={() => this.setOperation('+')}>+</button>
+                <button onClick={() => this.setOperation('-')}>-</button>
+                <button onClick={() => this.setOperation('/')}>/</button>
+                <button onClick={() => this.setOperation('*')}>*</button>
             </div>
         </div>
     )
