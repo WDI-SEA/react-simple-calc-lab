@@ -1,13 +1,14 @@
 import React, { Component } from "react";
+import Calculator from "./Calculator";
 
 export default class App extends Component {
   render(){
     return(
-      <>
+      <div>
+
+     <Calculator />
       
-      <h1>Hi I'm the H1 in the App file</h1>
-      
-      </>
+      </div>
     )
   }
 }
