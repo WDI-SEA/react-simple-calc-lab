@@ -5,7 +5,7 @@ class Calculator extends Component {
       num1: "",
       operator: "",
       num2: "",
-      sum: ""
+      result: ""
     }
     setValue = e => {
         this.setState({[e.target.name]: e.target.value});
@@ -16,35 +16,35 @@ class Calculator extends Component {
             switch (this.state.operator) {
                 case "+":
                     return {
-                        sum: parseInt(prevState.num1) + parseInt(prevState.num2),
+                        result: parseInt(prevState.num1) + parseInt(prevState.num2),
                         num1: "",
                         operator: "",
                         num2: ""
                     }
                 case "-":
                     return {
-                        sum: parseInt(prevState.num1) - parseInt(prevState.num2),
+                        result: parseInt(prevState.num1) - parseInt(prevState.num2),
                         num1: "",
                         operator: "",
                         num2: ""
                     }
                 case "*":
                     return {
-                        sum: parseInt(prevState.num1) * parseInt(prevState.num2),
+                        result: parseInt(prevState.num1) * parseInt(prevState.num2),
                         num1: "",
                         operator: "",
                         num2: ""
                     }
                 case "/":
                     return {
-                        sum: parseInt(prevState.num1) / parseInt(prevState.num2),
+                        result: parseInt(prevState.num1) / parseInt(prevState.num2),
                         num1: "",
                         operator: "",
                         num2: ""
                     }
                 default:
                     return {
-                        sum: "Invalid arithmetic operator",
+                        result: "Invalid arithmetic operator",
                         num1: "",
                         operator: "",
                         num2: ""
