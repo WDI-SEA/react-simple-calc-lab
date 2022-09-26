@@ -77,7 +77,7 @@ class Calculator extends Component {
                             <button type="submit">=</button>
                         </div>
                     </form>
-                    <h1 className="w-fit h-fit mx-auto mt-2 p-3 bg-black border rounded text-center text-4xl">{this.state.sum}</h1>
+                    <h1 className="w-fit h-fit mx-auto mt-2 p-3 bg-black border rounded text-center text-4xl">{this.state.result}</h1>
                 </div>
             </div>
         );
