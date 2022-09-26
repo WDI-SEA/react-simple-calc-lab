@@ -21,7 +21,6 @@ class Calculator extends Component {
                         operator: "",
                         num2: ""
                     }
-                    break;
                 case "-":
                     return {
                         sum: parseInt(prevState.num1) - parseInt(prevState.num2),
@@ -29,7 +28,6 @@ class Calculator extends Component {
                         operator: "",
                         num2: ""
                     }
-                    break;
                 case "*":
                     return {
                         sum: parseInt(prevState.num1) * parseInt(prevState.num2),
@@ -37,7 +35,6 @@ class Calculator extends Component {
                         operator: "",
                         num2: ""
                     }
-                    break;
                 case "/":
                     return {
                         sum: parseInt(prevState.num1) / parseInt(prevState.num2),
@@ -45,7 +42,6 @@ class Calculator extends Component {
                         operator: "",
                         num2: ""
                     }
-                    break;
                 default:
                     return {
                         sum: "Invalid arithmetic operator",
@@ -53,7 +49,6 @@ class Calculator extends Component {
                         operator: "",
                         num2: ""
                     }
-                    break;
             }
         });
     }
