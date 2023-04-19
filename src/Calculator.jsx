@@ -16,7 +16,7 @@ export default class Calculator extends Component {
         let num2 = parseInt(this.state.num2)
         this.setState(() => {
             return {
-                sum: num1 - num2
+                sum: num1 + num2
             }
         })
     }
