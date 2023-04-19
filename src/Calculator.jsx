@@ -7,41 +7,39 @@ export default class Calculator extends Component {
         output: null,
         math: "+"
       }
-      handleMath = e => {
+    handleMath = e => {
         console.log(e.target.value);
         this.setState({
             math: e.target.value
-        })
+        }) 
       }
-      handleInput = e => {
+    handleInput = e => {
         console.log(e);
         this.setState({
             [e.target.id]: e.target.value,
-        },
-            () => {
-                if (this.state.firstNum !== null && this.state.secNum !== null) {
-                    const mathSign = this.state.math;
-                    let sum;
-                    switch (mathSign) {
-                        case "-":
-                        sum = parseInt(this.state.firstNum) - parseInt(this.state.secNum);
-                        break;
-                        case "*":
-                        sum = parseInt(this.state.firstNum) * parseInt(this.state.secNum);
-                        break;
-                        case "/":
-                        sum = parseInt(this.state.firstNum) / parseInt(this.state.secNum);
-                        break;
-                        default:
-                        sum = parseInt(this.state.firstNum) + parseInt(this.state.secNum);
-                        }
-                    console.log(this.state.firstNum + " " + this.state.math + " " + this.state.secNum + " = " + sum);
-                    this.setState({
-                        output: sum
-                    })
-                }
+        }, () => {
+            if (this.state.firstNum !== null && this.state.secNum !== null) {
+                const mathSign = this.state.math;
+                let sum;
+                switch (mathSign) {
+                    case "-":
+                    sum = parseInt(this.state.firstNum) - parseInt(this.state.secNum);
+                    break;
+                    case "*":
+                    sum = parseInt(this.state.firstNum) * parseInt(this.state.secNum);
+                    break;
+                    case "/":
+                    sum = parseInt(this.state.firstNum) / parseInt(this.state.secNum);
+                    break;
+                    default:
+                    sum = parseInt(this.state.firstNum) + parseInt(this.state.secNum);
+                    }
+                console.log(this.state.firstNum + " " + this.state.math + " " + this.state.secNum + " = " + sum);
+                this.setState({
+                    output: sum
+                })
             }
-        )
+        })
     }
     render() {
         return (
@@ -59,7 +57,7 @@ export default class Calculator extends Component {
                     </select>
                     <input type="text" id="secNum" onChange={this.handleInput} value={this.state.secNum}/>
                     <button>=</button>
-                    <h3>{this.state.output ?  `${this.state.output}` : "Type in some numbers!"}</h3>
+                    <h3>{this.state.output ? `${this.state.output}` : "Type in some numbers!"}</h3>
                 </div>
             </div>
         )
